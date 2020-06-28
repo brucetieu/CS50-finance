@@ -1,2 +1,5 @@
 .idea/
 apikey.txt
+__pycache__
+./idea
+venv
