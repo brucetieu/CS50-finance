@@ -1,0 +1,14 @@
+<!-- This html page builds the quoted page which displays the information of the stock -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+<!-- We passed in quote = lookup(quote), which returns a dictionary -->
+A share of {{ quote['name'] }} ({{ quote['symbol'] }}) costs ${{ quote["price"] }}.
+
+{% endblock %}

@@ -1,0 +1,20 @@
+<!-- This html builds the page which allows the user to enter a symbol and click for a quote of pricing -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+<!-- https://getbootstrap.com/docs/4.0/components/forms/ -->
+
+{% block main %}
+    <form action="/quote" method="post">
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
+{% endblock %}

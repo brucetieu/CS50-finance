@@ -1,0 +1,31 @@
+<!-- THIS HTML CREATES THE HISTORY PAGE, A HISTORY OF TRANSACTIONS MADE -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Transactions
+{% endblock %}
+
+
+{% block main %}
+
+<!-- tr: table row, th: table header, td: cells of table -->
+<table>
+  <tr>
+    <th>Symbol</th>
+    <th>Shares</th>
+    <th>Price</th>
+    <th>Transacted</th>
+  </tr>
+  <!-- We passed in past_purchases as a SQL query -->
+  {% for purchase in past_purchases %}
+  <tr>
+      <td>{{ purchase['Symbol'] }} </td>
+      <td>{{ purchase['Shares'] }} </td>
+      <td>{{ purchase['Price'] }} </td>
+      <td>{{ purchase['Transacted'] }} </td>
+  </tr>
+  {% endfor %}
+
+</table>
+{% endblock %}

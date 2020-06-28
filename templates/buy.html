@@ -1,0 +1,23 @@
+<!-- This html template builds the 'buy' page, a page where users can enter a symbol and the # of shares they want to buy -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+<!-- https://getbootstrap.com/docs/4.0/components/forms/ -->
+
+{% block main %}
+    <form action="/buy" method="post">
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="shares" placeholder="Shares" type="text">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+{% endblock %}

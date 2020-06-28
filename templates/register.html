@@ -1,0 +1,29 @@
+<!-- This html page builds the page which allows a user to register -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+<!-- https://getbootstrap.com/docs/4.0/components/forms/ -->
+
+
+{% block main %}
+    <form action="/register" method="post">
+        <!-- Username field -->
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <!-- Password field -->
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <!-- Password again -->
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Password (again)" type="password">
+        </div>
+        <!-- Login button -->
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+{% endblock %}

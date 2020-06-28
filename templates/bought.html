@@ -1,0 +1,49 @@
+<!-- THIS HTML PAGE CREATES THE BOUGHT PAGE, WHICH IS SHOWN ONCE THE "BUY" BUTTON IS SUBMITTED -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Transactions
+{% endblock %}
+
+
+{% block main %}
+
+<table>
+  <tr>
+    <th>Symbol</th>
+    <th>Name</th>
+    <th>Shares</th>
+    <th>Price</th>
+    <th>TOTAL</th>
+  </tr>
+  {% for row in final %}
+  <!-- We passed IN 'final' as a SQL query -->
+  <tr>
+      <td>{{ row['Symbol'] }} </td>
+      <td>{{ row['Name'] }} </td>
+      <td>{{ row['Shares'] }} </td>
+      <td>{{ row['Price'] }} </td>
+      <td>${{ row['Total'] }} </td>
+  </tr>
+  {% endfor %}
+  <!--- Add an extra row for the amount of cash remaining -->
+  <tr>
+    <td> CASH </td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td> {{amount}} </td>
+  </tr>
+  <!-- Also add an extra row for the final_sum which is the sum of the 'Total' column -->
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>{{ final_sum }}</td>
+  </tr>
+
+</table>
+
+{% endblock %}
