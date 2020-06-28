@@ -1,2 +1,0 @@
-// API key to access stock information from IEX
-export API_KEY=pk_178d514890e54f27966dfab039790313
